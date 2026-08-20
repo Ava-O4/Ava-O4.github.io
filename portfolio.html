@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alpha's Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="all-contents">
+    <nav>
+      <h1>The Alpha's Paradise</h1>
+      <ul id="nav-ul">
+        <li class="nav-li"><a href="index.html">Home</a></li>
+        <li class="nav-li"><a href="portfolio.html" aria-current="page">Portfolio</a></li>
+      </ul>
+    </nav>
+
+    <main class="portfolio-main">
+      <section class="portfolio-header">
+        <p class="eyebrow">Work in progress</p>
+        <h2>Alpha's Lair</h2>
+        <p>Click the background to play music!</p>
+      </section>
+
+      <section class="project-section" aria-labelledby="fsd-projects-title">
+        <h3 id="fsd-projects-title">FSD Projects</h3>
+        <ul id="portfolio">
+          <li><a href="fsd-projects/platformer/">Platformer <span>Play the game</span></a></li>
+          <li><a href="fsd-projects/bouncing-box/">Bouncing Box <span>Open project</span></a></li>
+          <li><a href="fsd-projects/circularity/">Circularity <span>Open project</span></a></li>
+          <li><a href="fsd-projects/runtime/">Runtime <span>Play the game</span></a></li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <!-- 1. Hidden Audio Element -->
+  <audio id="bg-music" loop>
+    <source src="30 min of Smooth Jazz Piano Music in a Cozy Bedroom for Relaxing , Study, take a break 4.mp3"
+      type="audio/mpeg">
+  </audio>
+
+  <!-- 2. Browser Autoplay Bypass Script -->
+  <script>
+    document.addEventListener('click', function () {
+      var audio = document.getElementById('bg-music');
+      audio.play().catch(function (error) {
+        console.log("Playback prevented by browser rules:", error);
+      });
+    }, { once: true }); // Runs only on the very first click
+  </script>
+</body>
+
+</html>

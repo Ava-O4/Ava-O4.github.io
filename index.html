@@ -7,39 +7,37 @@
 </head>
 
 <body>
-  <!-- All content goes here -->
   <div id="all-contents">
-    </div>
-     <nav>
+    <nav>
       <h1>The Alpha's Paradise</h1>
       <ul id="nav-ul">
         <li class="nav-li">
           <a href="index.html">Home</a>
         </li>
         <li class="nav-li">
-          <a href="TheAlphasDen.html">The Alphas Den</a>
+          <a href="portfolio.html">The Alphas Lair</a>
         </li>
       </ul>
-     </nav>
-     <div id="all-contents">
-    <!-- nav goes here (TODO 6) -->
-     <main>
+    </nav>
+    <main>
       <!-- Sidebar section -->
       <div class="sidebar">
-        <img class="sidebar-img" src="https://i.etsystatic.com/58859513/r/il/fc43c1/6837609666/il_570xN.6837609666_o6qx.jpg">
+        <img class="sidebar-img"
+          src="https://i.etsystatic.com/58859513/r/il/fc43c1/6837609666/il_570xN.6837609666_o6qx.jpg">
       </div>
 
       <!-- Content section -->
-       <div class="content">
+      <div class="content">
         <h2>Ava Ofor</h2>
-        <p>The alpha In the presence of Beta's.</p>
+        <p>The alpha In the presence of Beta's.
+          click background to play music!</p>
 
-       <!-- Interests section -->
+        <!-- Interests section -->
         <div id="interests">
           <h3>Interests</h3>
           <ul>
             <li>Gaming</li>
-            <li>Soccor</li>
+            <li>Soccer</li>
             <li>Cooking</li>
             <li>Drawing</li>
             <li>Acting</li>
@@ -47,8 +45,23 @@
           </ul>
         </div>
       </div>
-     </main>
+    </main>
   </div>
+
+  <!-- 1. Hidden Audio Element -->
+  <audio id="bg-music" loop>
+    <source src="30 Minute Countdown Timer - Cozy Coffee Shop With Fireplace & Music (Jazz).mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- 2. Browser Autoplay Bypass Script -->
+  <script>
+    document.addEventListener('click', function() {
+      var audio = document.getElementById('bg-music');
+      audio.play().catch(function(error) {
+        console.log("Playback prevented by browser rules:", error);
+      });
+    }, { once: true }); // Runs only on the very first click
+  </script>
 </body>
 
 </html>
