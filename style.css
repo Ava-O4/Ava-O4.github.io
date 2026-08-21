@@ -18,11 +18,36 @@ body {
 
   color: rgb(255, 230, 1);
   padding: 10px;
-  font-family: Courier, monospace;
+  font-family: fantasy;
 }
+
+body::before {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  content: "";
+  opacity: 0.7;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 12% 18%, #fff 0 1px, transparent 2px),
+    radial-gradient(circle at 34% 72%, #ffee00 0 1px, transparent 2px),
+    radial-gradient(circle at 68% 24%, #fff 0 1px, transparent 2px),
+    radial-gradient(circle at 88% 82%, #fff 0 1px, transparent 2px),
+    radial-gradient(circle at 52% 46%, #ffb8ff 0 1px, transparent 2px);
+  background-size:
+    220px 220px,
+    280px 280px,
+    340px 340px,
+    190px 190px,
+    420px 420px;
+  animation: moveStars 18s linear infinite;
+}
+
 #all-contents {
   max-width: 800px;
   margin: auto;
+  position: relative;
+  z-index: 1;
 }
 main {
   display: grid;
@@ -44,12 +69,12 @@ main {
 }
 h2 {
   margin: 0;
-  font-size: clamp(4rem, 10vw, 7rem);
+  font-size: clamp(4rem, 6vw, 7rem);
   line-height: 0.9;
   font-weight: 900;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: #160000;
+  color: #160000ac;
 }
 
 .content > p {
@@ -192,7 +217,7 @@ nav h1 {
   color: #fff;
 }
 nav {
-  background: #020b5a;
+  background: #020b5a60;
   border-color: #ee1000;
 }
 
@@ -219,6 +244,26 @@ nav h1 {
     background-position: 0% 50%;
   }
 }
+
+@keyframes moveStars {
+  from {
+    background-position:
+      0 0,
+      40px 80px,
+      120px 20px,
+      80px 140px,
+      180px 60px;
+  }
+  to {
+    background-position:
+      220px 220px,
+      320px 360px,
+      460px 260px,
+      270px 330px,
+      500px 280px;
+  }
+}
+
 @media (max-width: 680px) {
   main {
     grid-template-columns: 1fr;
@@ -237,9 +282,9 @@ nav h1 {
 .portfolio-main {
   position: relative;
   padding: 34px 18px 18px;
-  border: 2px solid #ff0000;
+  border: 2px solid #b00101;
   border-radius: 18px;
-  background: rgba(2, 11, 90, 0.22);
+  background: rgba(0, 4, 37, 0.22);
 }
 
 .portfolio-main::before,
@@ -258,13 +303,13 @@ nav h1 {
 }
 
 .portfolio-main::before {
-  top: 8px;
-  content: "ฅ^•ﻌ•^ฅ  ฅ^•ﻌ•^ฅ  ฅ^•ﻌ•^ฅ";
+  top: 10px;
+  content: "🌙🐺❀.ೃ࿔*";
 }
 
 .portfolio-main::after {
-  bottom: 8px;
-  content: "ฅ^•ﻌ•^ฅ  ฅ^•ﻌ•^ฅ  ฅ^•ﻌ•^ฅ";
+  bottom: 10px;
+  content: "🌙🐺❀.ೃ࿔*";
 }
 
 .content h1 {
@@ -295,7 +340,7 @@ nav h1 {
   padding: 16px 20px;
   font-size: 1.1rem;
   font-weight: 500;
-  background: #070650;
+  background: #0706504f;
   border: 1px solid #ff0000;
   border-radius: 12px;
   transition:
