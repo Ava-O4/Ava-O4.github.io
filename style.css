@@ -158,9 +158,9 @@ h2 {
     box-shadow 0.4s ease;
 }
 
-.sidebar-img:hover {
+.sidebar:hover .sidebar-img {
   filter: grayscale(0%);
-  transform: translateY(-4px);
+  transform: translateY(-28px);
   box-shadow: 0 16px 40px rgba(230, 4, 4, 0.849);
 }
 .sidebar-img {
