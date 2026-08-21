@@ -281,10 +281,50 @@ nav h1 {
 /* Portfolio styles */
 .portfolio-main {
   position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(150px, 210px);
+  align-items: center;
+  gap: 20px;
   padding: 34px 18px 18px;
   border: 2px solid #b00101;
   border-radius: 18px;
   background: rgba(0, 4, 37, 0.22);
+}
+
+.portfolio-art {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.portfolio-art img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.portfolio-art-original {
+  opacity: 1;
+}
+
+.portfolio-art-hover {
+  opacity: 0;
+  transform: scale(0.92);
+}
+
+.portfolio-art:hover .portfolio-art-original {
+  opacity: 0;
+  transform: scale(0.92);
+}
+
+.portfolio-art:hover .portfolio-art-hover {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .portfolio-main::before,
@@ -317,6 +357,7 @@ nav h1 {
 }
 
 #portfolio {
+  grid-column: 1 / -1;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -365,4 +406,14 @@ nav h1 {
 
 #portfolio a:hover::after {
   opacity: 1;
+}
+
+@media (max-width: 680px) {
+  .portfolio-main {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-art {
+    height: 150px;
+  }
 }
