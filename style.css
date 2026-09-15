@@ -5,10 +5,10 @@
 body {
   background: linear-gradient(
     135deg,
-    #9000ff 15%,
+    #320993 15%,
     #2100f4 20%,
     #9801f7 50%,
-    #ff00ff 80%
+    #b940b9 100%
   );
   background-size: 400% 400%;
   animation: moveGradient 12s ease infinite;
